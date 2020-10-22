@@ -1,13 +1,15 @@
-from flask import Flask, request
+from flask import Flask, request, redirect
 app = Flask(__name__)
+
 
 @app.route('/')
 def mainPage():
     return 'Hello World'
 
+
 givenUrl = ''
 
-@app.before_request
-def getUrl():
-    print('request')
-    print(request.args.getlist)
+
+@app.route('/<path>')
+def getUrl(path):
+    return redirect(f"https://www.{path}", code=302)
