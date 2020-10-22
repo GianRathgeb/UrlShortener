@@ -9,7 +9,6 @@ def mainPage():
 
 givenUrl = ''
 
-
 @app.route('/<path>')
 def getUrl(path):
     return redirect(f"https://www.{path}", code=302)
