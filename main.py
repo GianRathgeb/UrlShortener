@@ -11,4 +11,4 @@ givenUrl = ''
 
 @app.route('/<path>')
 def getUrl(path):
-    return redirect(f"https://www.{path}", code=302)
+    return redirect(f"https://www.{path}", code=308)
