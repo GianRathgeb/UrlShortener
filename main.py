@@ -7,8 +7,9 @@ def mainPage():
     return 'Hello World'
 
 
-givenUrl = ''
-
 @app.route('/<path>')
 def getUrl(path):
-    return redirect(f"https://www.{path}", code=308)
+    if path == "google":
+        return redirect("https://www.google.ch", code=308)
+    else:
+        return redirect("/", code=308)
