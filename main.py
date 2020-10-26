@@ -1,4 +1,7 @@
 from flask import Flask, request, redirect
+
+import url as urllist
+
 app = Flask(__name__)
 
 
@@ -9,7 +12,10 @@ def mainPage():
 
 @app.route('/<path>')
 def getUrl(path):
-    if path == "google":
-        return redirect("https://www.google.ch", code=308)
+    if path in urllist.url.keys():
+        print('in list')
+        for short in urllist.url:
+            if short == path:
+                return redirect(urllist.url[short], code=308)
     else:
         return redirect("/", code=308)
