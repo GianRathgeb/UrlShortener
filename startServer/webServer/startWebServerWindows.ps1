@@ -2,4 +2,4 @@
 # pip install flask
 $env:FLASK_APP = 'main.py'
 
-flask run --host=localhost
+flask run --host=localhost --port=5000
