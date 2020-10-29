@@ -1,4 +1,13 @@
 from flask import Flask, request, redirect
+from flask_sqlalchemy import SQLAlchemy
+
+from databaseServer import db
+db.create_all()
+newUrl = AddNewUrl(urlShort='gea', urlLong='https://google.com')
+db.session.add(newUrl)
+db.session.commit()
+
+AddNewUrl.query.all()
 
 import url as urllist
 
